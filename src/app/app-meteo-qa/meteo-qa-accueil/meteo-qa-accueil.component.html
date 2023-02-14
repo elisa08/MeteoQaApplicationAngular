@@ -40,8 +40,8 @@
     </form>
   </main>
 </div>-->
-<!-- <div>
-  <select name="" id="">
+<div>
+  <select name="" id="" (change)="getCommuneById($event)">
     <option *ngFor="let commune of communeListe" [value]="commune.idCommune">{{commune.nom}}</option>
   </select>
-  </div> -->
+</div>

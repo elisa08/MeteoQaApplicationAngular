@@ -45,8 +45,8 @@ export class MeteoQaAccueilComponent implements OnInit {
     })
   }
 
-  getCommuneById(idCommune:number){
-
+  getCommuneById(idCommune:any){
+    console.log(idCommune.target.value);
 
 
   }

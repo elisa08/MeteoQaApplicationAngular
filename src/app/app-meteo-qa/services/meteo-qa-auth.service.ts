@@ -23,4 +23,25 @@ export class MeteoQaAuthService {
     return this.http.post<User>(url, { ...data }, { headers: this.headers }).pipe(take(1));
 
   }
+
+  loginUser(data:User): Observable<User>{
+
+    const url = `${this.serviceConfig.url}/auth`;
+    return this.http.post<User>(url, { ...data }, { headers: this.headers }).pipe(take(1));
+
+  }
+
+  isConnected(){
+
+    let isConnected= false;
+
+    if(localStorage.getItem("userConnected")){
+
+      isConnected= true;
+
+    }
+
+    return isConnected;
+
+  }
 }
