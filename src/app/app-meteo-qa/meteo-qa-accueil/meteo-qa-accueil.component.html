@@ -1,5 +1,5 @@
-<div class="container">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="container mt-5">
+<!--  <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">METEO APP</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -14,7 +14,104 @@
         </li>
       </ul>
     </div>
-  </nav>
+  </nav>-->
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="jumbotron">
+        <h1 class="display-4 text-bold">Welcome <span class="green-label">green</span> friend</h1>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at tincidunt ligula. Mauris posuere augue et eros lobortis, eu porttitor ligula gravida. Sed nec suscipit lectus. In hac habitasse platea dictumst. Quisque ac orci cursus, convallis dui eu, tincidunt felis.
+          Nunc in dictum ex. <a href="#">consectetur adipiscing</a></p>
+        <div class="row mt-10">
+          <div class="col-lg-2">
+            <h4>Forum</h4>
+          </div>
+          <div class="col-lg-3">
+            <input type="text" class="form-control" placeholder="Rechercher une discussion">
+          </div>
+          <div class="col-lg-3 green-label">Auteur</div>
+          <div class="col-lg-2 green-label">Discussion</div>
+          <div class="col-lg-2 green-label">Etat</div>
+        </div>
+        <div class="discussion-list mt-5">
+          <div class="row">
+            <div class="col-lg-6">
+              <h5>Nom de la rubrique</h5>
+              <p class="gray-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at tincidunt ligula. </p>
+            </div>
+            <div class="col-lg-2">
+              Elisa
+            </div>
+            <div class="col-lg-2">342</div>
+            <div class="col-lg-2 green-label">Etat</div>
+          </div>
+          <hr class="my-4">
+          <div class="row">
+            <div class="col-lg-6">
+              <h5>Nom de la rubrique</h5>
+              <p class="gray-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at tincidunt ligula. </p>
+            </div>
+            <div class="col-lg-2">
+              Elisa
+            </div>
+            <div class="col-lg-2">342</div>
+            <div class="col-lg-2 green-label">Etat</div>
+          </div>
+          <hr class="my-4">
+          <div class="row">
+            <div class="col-lg-6">
+              <h5>Nom de la rubrique</h5>
+              <p class="gray-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at tincidunt ligula. </p>
+            </div>
+            <div class="col-lg-2">
+              Elisa
+            </div>
+            <div class="col-lg-2">342</div>
+            <div class="col-lg-2 green-label">Etat</div>
+          </div>
+          <hr class="my-4">
+          <div class="row">
+            <div class="col-lg-6">
+              <h5>Nom de la rubrique</h5>
+              <p class="gray-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at tincidunt ligula. </p>
+            </div>
+            <div class="col-lg-2">
+              Elisa
+            </div>
+            <div class="col-lg-2">342</div>
+            <div class="col-lg-2 yellow-text">clos</div>
+          </div>
+          <hr class="my-4">
+          <div class="row">
+            <div class="col-lg-6">
+              <h5>Nom de la rubrique</h5>
+              <p class="gray-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at tincidunt ligula. </p>
+            </div>
+            <div class="col-lg-2">
+              Elisa
+            </div>
+            <div class="col-lg-2">342</div>
+            <div class="col-lg-2 yellow-text">clos</div>
+          </div>
+          <hr class="my-4">
+        </div>
+
+        <div>
+          <select name="" id="" (change)="getCommuneById($event)">
+            <option *ngFor="let commune of communeListe" [value]="commune.idCommune">{{commune.nom}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="form-panel  mt-10">
+        <app-meteo-qa-login></app-meteo-qa-login>
+        <hr class="my-4">
+        <app-meteo-qa-inscription></app-meteo-qa-inscription>
+      </div>
+
+    </div>
+  </div>
+
 </div>
 <!--<div class="container pt-10">
   <main class="form-signin w-100 m-auto">
@@ -40,8 +137,4 @@
     </form>
   </main>
 </div>-->
-<div>
-  <select name="" id="" (change)="getCommuneById($event)">
-    <option *ngFor="let commune of communeListe" [value]="commune.idCommune">{{commune.nom}}</option>
-  </select>
-</div>
+
