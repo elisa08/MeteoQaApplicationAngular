@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Commune } from '../models/Commune';
 import { Indicateur } from '../models/Indicateurs';
 import { MeteoQaAccueilService } from '../services/meteo-qa-accueil.service';
+import { MeteoQaApiService } from '../services/meteo-qa-api.service';
 import { MeteoQaCommuneService } from '../services/meteo-qa-commune.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class MeteoQaAccueilComponent implements OnInit {
   commune!:Commune;
   communeListe:any;
 
-  constructor(private service : MeteoQaAccueilService, private serviceCommune : MeteoQaCommuneService) { }
+  constructor(private service : MeteoQaAccueilService, private serviceCommune : MeteoQaCommuneService, private serviceMeteo : MeteoQaApiService) { }
 
   ngOnInit(): void {
 
@@ -46,7 +47,20 @@ export class MeteoQaAccueilComponent implements OnInit {
   }
 
   getCommuneById(idCommune:any){
-    console.log(idCommune.target.value);
+    let communeId= idCommune.target.value;
+    // recuperation de coordonnées géographique
+    this.serviceCommune.getCommuneById(communeId).subscribe(data=>{
+      this.commune= data;
+      if(this.commune){
+        this.serviceMeteo.getMeteoBylatitudeAndLongitude(this.commune.latitude,this.commune.longitude
+          ).subscribe(data=>{
+         console.log(data)})
+      }else{
+        alert("Commune introuvable");
+      }
+      console.log(data);
+    })
+    // recupération de la météo
 
 
   }

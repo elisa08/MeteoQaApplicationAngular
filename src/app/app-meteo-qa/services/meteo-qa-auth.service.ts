@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Commune } from '../models/Commune';
 import { Observable } from 'rxjs';
-import { ConfigService } from 'src/app/config.service';
+import { ConfigService } from './config.service';
 import { map, take } from 'rxjs/operators';
 import { User } from '../models/users';
 
@@ -11,7 +11,7 @@ import { User } from '../models/users';
 })
 export class MeteoQaAuthService {
   headers = new HttpHeaders();
-  constructor(private http:HttpClient, private serviceConfig:ConfigService, ){
+  constructor(private http:HttpClient, private serviceConfig:ConfigService ){
     this.headers.append('Content-Type', 'application/json');
     this.headers.append('Accept', 'application/json');
 

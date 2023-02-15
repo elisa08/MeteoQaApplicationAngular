@@ -30,9 +30,9 @@ export class MeteoQaLoginComponent implements OnInit {
 
   }
   loginUser(){
+
     const dataUser= this.formLogin.value;
     console.log(dataUser);
-
 
     localStorage.setItem("userConnected",JSON.stringify(dataUser));
 

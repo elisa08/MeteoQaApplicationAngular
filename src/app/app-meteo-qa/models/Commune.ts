@@ -1,5 +1,5 @@
 export class Commune{
-  lat!:string;
-  lon!:string;
+  latitude!:string;
+  longitude!:string;
   nom!:string;
 }
