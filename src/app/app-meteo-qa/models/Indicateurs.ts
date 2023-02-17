@@ -1,6 +1,6 @@
 export class Indicateur{
 
-    date!: Date;
+    date!: string;
     sulphur_dioxide!: number;
     uv_index!: number;
     nitrogen_dioxide!: number;

@@ -6,11 +6,15 @@ import { AppComponent } from './app.component';
 import { MeteoQaModule } from './app-meteo-qa/meteo-qa.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MeteoRoutingModule } from './app-meteo-qa/meteo-routing.module';
+import { MeteoQaAffichageComponent } from './meteo-qa-affichage/meteo-qa-affichage.component';
+import { MeteoQaForumComponent } from './meteo-qa-forum/meteo-qa-forum.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MeteoQaAffichageComponent,
+    MeteoQaForumComponent
 
   ],
   imports: [

@@ -10,7 +10,7 @@ export class MeteoQaAccueilService {
 
 
   constructor(private http : HttpClient) { }
-  options= {headers:new HttpHeaders({"Access-Control-Allow-Origin":"*"})}
+  options= {headers:new HttpHeaders({"Access-Control-Allow-Origin":"*"})}// à virer
   getMeteo(): Observable<Indicateur[]>{
 
     let result= this.http.get<Indicateur[]>("http://localhost:9090/indicateurs/lat=45.9608475114&long=5.3729257777", this.options);

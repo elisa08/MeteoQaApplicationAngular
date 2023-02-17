@@ -17,7 +17,7 @@ export class MeteoQaLoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.formLogin = this.builder.group({
-      login: ['', [Validators.required, Validators.email]],
+      login: ['', [Validators.required]],
       password: ['', [Validators.required]],
 
     });
@@ -32,18 +32,18 @@ export class MeteoQaLoginComponent implements OnInit {
   loginUser(){
 
     const dataUser= this.formLogin.value;
-    console.log(dataUser);
+    // console.log(dataUser);
 
-    localStorage.setItem("userConnected",JSON.stringify(dataUser));
+    // localStorage.setItem("userConnected",JSON.stringify(dataUser));
 
-    this.router.navigate(["meteo-qa-compte"]);
+    // this.router.navigate(["meteo-qa-compte"]);
 
-    // this.service.loginUser(dataUser).subscribe(
-    //   (callback) => {
-    //     console.log(callback)
-    //     this.formLogin.reset();
-    //   },
-    //   (error) => {}
-    // );
+    this.service.loginUser(dataUser).subscribe(
+      (callback) => {
+        console.log(callback)
+        this.formLogin.reset();
+      },
+      (error) => {}
+    );
   }
 }

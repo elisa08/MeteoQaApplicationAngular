@@ -7,5 +7,6 @@ export class Meteo{
   precipitation!:string;
   humidite!:string;
   neige!:string;
+  date!:string;
 
 }

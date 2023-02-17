@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Commune } from '../models/Commune';
 import { Indicateur } from '../models/Indicateurs';
+import { Meteo } from '../models/Meteo';
 import { MeteoQaAccueilService } from '../services/meteo-qa-accueil.service';
 import { MeteoQaApiService } from '../services/meteo-qa-api.service';
 import { MeteoQaCommuneService } from '../services/meteo-qa-commune.service';
@@ -12,9 +13,28 @@ import { MeteoQaCommuneService } from '../services/meteo-qa-commune.service';
 })
 export class MeteoQaAccueilComponent implements OnInit {
 
-  data:Indicateur[]=[];
+  indicateur:Indicateur={
+    date:"",
+    sulphur_dioxide:0,
+    uv_index:0,
+    nitrogen_dioxide:0,
+    pm10:0,
+    ozone:0,
+    carbon_monoxide:0
+  };
+  meteo:Meteo={
+    temperature:"",
+    vitesse:"",
+    directionVent:"",
+    niveauNuage:"",
+    precipitation:"",
+    humidite:"",
+    neige:"",
+    date:""
+  };
   commune!:Commune;
   communeListe:any;
+  meteos:Meteo[]=[];
 
   constructor(private service : MeteoQaAccueilService, private serviceCommune : MeteoQaCommuneService, private serviceMeteo : MeteoQaApiService) { }
 
@@ -47,14 +67,18 @@ export class MeteoQaAccueilComponent implements OnInit {
   }
 
   getCommuneById(idCommune:any){
+
     let communeId= idCommune.target.value;
+    console.log(communeId)
     // recuperation de coordonnées géographique
     this.serviceCommune.getCommuneById(communeId).subscribe(data=>{
       this.commune= data;
       if(this.commune){
-        this.serviceMeteo.getMeteoBylatitudeAndLongitude(this.commune.latitude,this.commune.longitude
-          ).subscribe(data=>{
-         console.log(data)})
+        this.serviceMeteo.getMeteoBylatitudeAndLongitude(this.commune.latitude,this.commune.longitude)
+        .subscribe(data=>{
+          this.meteo= data;
+          this.meteos.push(this.meteo);
+          console.log(this.meteos)})
       }else{
         alert("Commune introuvable");
       }

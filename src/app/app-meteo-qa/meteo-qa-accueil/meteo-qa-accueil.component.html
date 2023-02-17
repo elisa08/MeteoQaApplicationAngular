@@ -45,3 +45,8 @@
     <option *ngFor="let commune of communeListe" [value]="commune.idCommune">{{commune.nom}}</option>
   </select>
 </div>
+<div>
+  <div *ngFor="let meteo of meteos">
+      <div>{{meteo.temperature}}ok</div>
+  </div>
+</div>

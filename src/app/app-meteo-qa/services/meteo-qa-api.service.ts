@@ -18,7 +18,7 @@ export class MeteoQaApiService {
     /** GET hero by id. Will 404 if id not found */
 
 
-    const url = ​this.config.url+"/meteos"+"/lat="+lat+"&long="+lon;
+    const url =this.config.url+"/meteos"+"/lat="+lat+"&long="+lon;
 
     return this.http.get<Meteo>(url).pipe(
 
