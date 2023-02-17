@@ -1,6 +1,6 @@
 <div class="container pt-10">
 <main class="form-signin w-100 m-auto">
-  <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+  <h1 class="h3 mb-3 fw-normal">S'inscire</h1>
   <form [formGroup]="formRegister">
      <div class="form-floating">
       <input type="text" class="form-control" id="floatingPassword" placeholder="nom" formControlName="nom">
@@ -20,9 +20,7 @@
         <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="motDePasse">
         <label for="floatingPassword">Password</label>
       </div>
-
-     <div class="checkbox mb-3"><a href="/meteo-qa-inscription">se connecter</a> | <a href="/meteo-qa-accueil">Accueil</a></div>
-     <button class="w-100 btn btn-lg btn-primary" type="button" (click)="registerUser()" [disabled]="!formRegister.valid">s'inscrire</button>
+     <button class="w-100 btn btn-lg btn-light" type="button" (click)="registerUser()" [disabled]="!formRegister.valid">s'inscrire</button>
 
 
   </form>

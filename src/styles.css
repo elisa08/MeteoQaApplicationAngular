@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+  background-color: black;
+  color: white;
+}
+.green-label{
+  font-weight: bold;
+  color: green;
+}
+a {
+  color: green;
+}
+.custom-list{
+  background-color: black;
+  color: white;
+}
+.gray-text{
+  color: gray;
+}
+.yellow-text{
+  color: yellow;
+}
