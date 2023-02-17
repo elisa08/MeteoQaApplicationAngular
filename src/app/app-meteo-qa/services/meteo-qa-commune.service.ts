@@ -2,15 +2,24 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, tap, of } from 'rxjs';
 import { Commune } from '../models/Commune';
+import { ConfigService } from './config.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MeteoQaCommuneService {
 
+  // meteoQatoken:string|null=  ;
+
+
+
   url="http://localhost:9090/communes";
-  constructor(private http:HttpClient) { }
-  options= {headers:new HttpHeaders({"Access-Control-Allow-Origin":"*"})}
+  constructor(private http:HttpClient, private serviceConfig:ConfigService) { }
+  // options= {headers:new HttpHeaders({})}
+//   options = new HttpHeaders({
+//     'Content-Type': 'application/json',
+//     'Authorization': 'Bearer ' + this.meteoQaToken
+//  });
 
   // getCommuneByLongitudeLatitude(c:Commune): Observable<Commune>{
 
@@ -20,7 +29,9 @@ export class MeteoQaCommuneService {
 
   // }
   getCommune(){
-    return this.http.get(this.url);
+
+    return this.http.get(this.url, this.serviceConfig.httpOptions);
+
   }
 
   getCommuneById(idCommune : number): Observable<Commune> {
@@ -30,7 +41,7 @@ export class MeteoQaCommuneService {
 
     const url = `${​this.url}/${idCommune}`;
 
-    return this.http.get<Commune>(url).pipe(
+    return this.http.get<Commune>(url,this.serviceConfig.httpOptions).pipe(
 
     tap(_ => console.log("erreur")), catchError(this.handleError<Commune>(`commune id=${idCommune}`))
 

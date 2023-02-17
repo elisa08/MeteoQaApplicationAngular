@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MeteoQaAffichageComponent } from '../meteo-qa-affichage/meteo-qa-affichage.component';
+import { MeteoQaCommuneComponent } from '../meteo-qa-commune/meteo-qa-commune.component';
+import { MeteoQaForumComponent } from '../meteo-qa-forum/meteo-qa-forum.component';
 import { MeteoQaAccueilComponent } from './meteo-qa-accueil/meteo-qa-accueil.component';
 import { MeteoQaCompteComponent } from './meteo-qa-compte/meteo-qa-compte.component';
 import { MeteoQaFavorisComponent } from './meteo-qa-favoris/meteo-qa-favoris.component';
@@ -39,6 +42,15 @@ const routes: Routes = [
   },
   {
     path:'meteo-qa-message',component:MeteoQaMessageComponent
+  },
+  {
+    path:'meteo-qa-commune',component:MeteoQaCommuneComponent
+  },
+  {
+    path:'meteo-qa-forum',component:MeteoQaForumComponent
+  },
+  {
+    path:'meteo-qa-forum',component:MeteoQaAffichageComponent
   }
 ];
 

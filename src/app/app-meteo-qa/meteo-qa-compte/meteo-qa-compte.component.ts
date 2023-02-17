@@ -17,11 +17,11 @@ export class MeteoQaCompteComponent implements OnInit {
   ngOnInit(): void {
 
 
-    if(this.serviceAuth.isConnected()===false){
+    // if(this.serviceAuth.isConnected()===false){
 
-      this.router.navigate(["meteo-qa-login"]);
+    //   this.router.navigate(["meteo-qa-login"]);
 
-    }
+    // }
   }
 
 }

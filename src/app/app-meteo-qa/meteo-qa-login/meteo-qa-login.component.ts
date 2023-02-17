@@ -34,14 +34,18 @@ export class MeteoQaLoginComponent implements OnInit {
     const dataUser= this.formLogin.value;
     // console.log(dataUser);
 
-    // localStorage.setItem("userConnected",JSON.stringify(dataUser));
 
-    // this.router.navigate(["meteo-qa-compte"]);
+
+
 
     this.service.loginUser(dataUser).subscribe(
       (callback) => {
-        console.log(callback)
+        console.log(callback.access_token);
+
+        localStorage.setItem("token",callback.access_token);
+        this.router.navigate(["meteo-qa-compte"]);
         this.formLogin.reset();
+        return false;
       },
       (error) => {}
     );

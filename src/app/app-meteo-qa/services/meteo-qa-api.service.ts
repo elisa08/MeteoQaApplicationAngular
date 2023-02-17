@@ -20,7 +20,7 @@ export class MeteoQaApiService {
 
     const url =this.config.url+"/meteos"+"/lat="+lat+"&long="+lon;
 
-    return this.http.get<Meteo>(url).pipe(
+    return this.http.get<Meteo>(url,this.config.httpOptions).pipe(
 
     tap(_ => console.log("erreur")), catchError(this.handleError<Meteo>("météo introuvable"))
 

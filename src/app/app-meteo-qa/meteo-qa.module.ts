@@ -9,6 +9,10 @@ import { MeteoQaMessageComponent } from './meteo-qa-message/meteo-qa-message.com
 import { MeteoQaRubriqueComponent } from './meteo-qa-rubrique/meteo-qa-rubrique.component';
 import { MeteoQaFilDeDiscussionComponent } from './meteo-qa-fil-de-discussion/meteo-qa-fil-de-discussion.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MeteoQaAffichageComponent } from '../meteo-qa-affichage/meteo-qa-affichage.component';
+import { MeteoQaForumComponent } from '../meteo-qa-forum/meteo-qa-forum.component';
+import { MeteoQaCommuneComponent } from '../meteo-qa-commune/meteo-qa-commune.component';
+import { MeteoQaNavComponent } from '../meteo-qa-nav/meteo-qa-nav.component';
 
 
 @NgModule({
@@ -21,6 +25,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MeteoQaMessageComponent,
     MeteoQaRubriqueComponent,
     MeteoQaFilDeDiscussionComponent,
+    MeteoQaAffichageComponent,
+    MeteoQaForumComponent,
+    MeteoQaCommuneComponent,
+    MeteoQaNavComponent
 
   ],
   exports:[

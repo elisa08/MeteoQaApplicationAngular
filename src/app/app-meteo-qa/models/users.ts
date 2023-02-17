@@ -3,5 +3,5 @@ export class User{
   nom!:string;
   prenom!:string;
   motDePasse!:string;
-
+  access_token!:string;
 }
