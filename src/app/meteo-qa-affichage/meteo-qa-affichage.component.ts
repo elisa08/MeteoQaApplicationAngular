@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import * as L from 'leaflet';
 @Component({
   selector: 'app-meteo-qa-affichage',
@@ -6,7 +6,7 @@ import * as L from 'leaflet';
   styleUrls: ['./meteo-qa-affichage.component.css']
 })
 export class MeteoQaAffichageComponent implements OnInit {
-
+  @Input() communeId = '';
   constructor() { }
 
   ngOnInit(): void {

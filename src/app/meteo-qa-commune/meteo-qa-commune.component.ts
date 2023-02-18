@@ -37,9 +37,9 @@ export class MeteoQaCommuneComponent implements OnInit {
   meteos!:any;
 
   constructor(private serviceCommune : MeteoQaCommuneService, private serviceMeteo : MeteoQaApiService) { }
-
+  currentCommuneId = 'Id commune';
   ngOnInit(): void {
-    //this.getCommune();
+    this.getCommune();
   }
   getCommune(){
     this.serviceCommune.getCommune().subscribe(data=>{
