@@ -22,9 +22,7 @@ import { MeteoQaNavComponent } from './meteo-qa-nav/meteo-qa-nav.component';
     MeteoRoutingModule,
     AppRoutingModule,
     MeteoQaModule,
-    HttpClientModule,
-
-
+    HttpClientModule
   ],
 
   providers: [],

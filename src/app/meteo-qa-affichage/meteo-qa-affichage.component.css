@@ -1,0 +1,22 @@
+:root {
+  --map-tiles-filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);
+}
+
+@media (prefers-color-scheme: dark) {
+  .map-tiles {
+    filter:var(--map-tiles-filter, none);
+  }
+}
+#meteoQaMap{
+  height: 1000px;
+  width: 100%;
+  z-index: 1;
+  position: relative;
+}
+.meteo-list{
+  position: absolute;
+  float: right;
+  z-index: 2;
+  right: 0;
+  pointer-events: auto;
+}
