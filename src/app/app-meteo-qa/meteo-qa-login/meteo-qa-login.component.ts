@@ -29,25 +29,24 @@ export class MeteoQaLoginComponent implements OnInit {
     }
 
   }
+
   loginUser(){
 
     const dataUser= this.formLogin.value;
-    // console.log(dataUser);
-
-
-
-
 
     this.service.loginUser(dataUser).subscribe(
       (callback) => {
         console.log(callback.access_token);
 
         localStorage.setItem("token",callback.access_token);
+        localStorage.setItem("login",dataUser.login);
+
         this.router.navigate(["meteo-qa-compte"]);
         this.formLogin.reset();
         return false;
       },
       (error) => {}
     );
+
   }
 }

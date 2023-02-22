@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MeteoQaAffichageComponent } from '../meteo-qa-affichage/meteo-qa-affichage.component';
 import { MeteoQaCommuneComponent } from '../meteo-qa-commune/meteo-qa-commune.component';
 import { MeteoQaForumComponent } from '../meteo-qa-forum/meteo-qa-forum.component';
+import { MeteoQaWidgetComponent } from '../meteo-qa-widget/meteo-qa-widget.component';
 import { MeteoQaAccueilComponent } from './meteo-qa-accueil/meteo-qa-accueil.component';
 import { MeteoQaCompteComponent } from './meteo-qa-compte/meteo-qa-compte.component';
 import { MeteoQaFavorisComponent } from './meteo-qa-favoris/meteo-qa-favoris.component';
@@ -51,6 +52,8 @@ const routes: Routes = [
   },
   {
     path:'meteo-qa-forum',component:MeteoQaAffichageComponent
+  }, {
+    path:'meteo-qa-forum',component:MeteoQaWidgetComponent
   }
 ];
 

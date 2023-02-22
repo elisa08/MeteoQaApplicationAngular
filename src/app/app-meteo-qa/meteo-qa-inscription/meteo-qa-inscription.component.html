@@ -4,7 +4,7 @@
   <form [formGroup]="formRegister">
      <div class="form-floating">
       <input type="text" class="form-control" id="floatingPassword" placeholder="nom" formControlName="nom">
-      <label for="floatingPassword">nom</label>
+      <label for="nom">nom</label>
     </div>
     <div class="form-floating">
       <input type="text" class="form-control" id="floatingPassword" placeholder="prenom" formControlName="prenom">
@@ -17,7 +17,13 @@
 
      </div>
      <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="motDePasse">
+      <input type="email"
+         class="form-control" id="floatingInput" formControlName="username"><label
+         for="floatingInput">username</label>
+
+   </div>
+     <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="password">
         <label for="floatingPassword">Password</label>
       </div>
      <button class="w-100 btn btn-lg btn-light" type="button" (click)="registerUser()" [disabled]="!formRegister.valid">s'inscrire</button>

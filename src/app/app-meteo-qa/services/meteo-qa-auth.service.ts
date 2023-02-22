@@ -9,6 +9,7 @@ import { User } from '../models/users';
 @Injectable({
   providedIn: 'root'
 })
+
 export class MeteoQaAuthService {
   headers = new HttpHeaders();
   constructor(private http:HttpClient, private serviceConfig:ConfigService ){
@@ -20,14 +21,21 @@ export class MeteoQaAuthService {
   addUser(data:User): Observable<User>{
 
     const url = `${this.serviceConfig.url}/users/creer`;
-    return this.http.post<User>(url, { ...data }, { headers: this.headers }).pipe(take(1));
+    return this.http.post<User>(url, { ...data }, this.serviceConfig.httpOptions).pipe(take(1));
 
   }
 
-  loginUser(data:User): Observable<User>{
+  loginUser(data:any): Observable<any>{
 
     const url = `${this.serviceConfig.url}/auth`;
-    return this.http.post<User>(url, { ...data }, { headers: this.headers }).pipe(take(1));
+    return this.http.post<any>(url, { ...data }, { headers: this.headers }).pipe(take(1));
+
+  }
+
+  getUserByUsername(username:string){
+
+    const url = `${this.serviceConfig.url}/users/?${username}`;
+    return this.http.get<any>(url,  this.serviceConfig.httpOptions).pipe(take(1));
 
   }
 

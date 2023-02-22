@@ -13,6 +13,7 @@ import { MeteoQaAffichageComponent } from '../meteo-qa-affichage/meteo-qa-affich
 import { MeteoQaForumComponent } from '../meteo-qa-forum/meteo-qa-forum.component';
 import { MeteoQaCommuneComponent } from '../meteo-qa-commune/meteo-qa-commune.component';
 import { MeteoQaNavComponent } from '../meteo-qa-nav/meteo-qa-nav.component';
+import { MeteoQaWidgetComponent } from '../meteo-qa-widget/meteo-qa-widget.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { MeteoQaNavComponent } from '../meteo-qa-nav/meteo-qa-nav.component';
     MeteoQaAffichageComponent,
     MeteoQaForumComponent,
     MeteoQaCommuneComponent,
-    MeteoQaNavComponent
+    MeteoQaNavComponent,
+    MeteoQaWidgetComponent
 
   ],
   exports:[

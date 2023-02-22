@@ -38,24 +38,19 @@ export class MeteoQaCommuneService {
 
     /** GET hero by id. Will 404 if id not found */
 
-
     const url = `${​this.url}/${idCommune}`;
 
     return this.http.get<Commune>(url,this.serviceConfig.httpOptions).pipe(
 
-    tap(_ => console.log("erreur")), catchError(this.handleError<Commune>(`commune id=${idCommune}`))
-
-
+    tap(_ => console.log(_)), catchError(this.handleError<Commune>(`commune id=${idCommune}`))
 
    );
-
-
-
 
     //let result= this.http.get<Commune>(this.url+"/"+idCommune,this.options);
     //return result;
 
   }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
@@ -64,9 +59,10 @@ export class MeteoQaCommuneService {
 
       // TODO: better job of transforming error for user consumption
 
-
       // Let the app keep running by returning an empty result.
       return of(result as T);
+
     };
   }
+
 }

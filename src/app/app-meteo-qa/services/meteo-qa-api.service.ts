@@ -17,19 +17,17 @@ export class MeteoQaApiService {
 
     /** GET hero by id. Will 404 if id not found */
 
-
     const url =this.config.url+"/meteos"+"/lat="+lat+"&long="+lon;
 
     return this.http.get<Meteo>(url,this.config.httpOptions).pipe(
 
-    tap(_ => console.log("erreur")), catchError(this.handleError<Meteo>("météo introuvable"))
-
-
+    tap(data => console.log(data)), catchError(this.handleError<Meteo>("météo introuvable"))
 
    );
   }
 
   private handleError<T>(operation = 'operation', result?: T) {
+
     return (error: any): Observable<T> => {
 
       // TODO: send the error to remote logging infrastructure
@@ -37,9 +35,11 @@ export class MeteoQaApiService {
 
       // TODO: better job of transforming error for user consumption
 
-
       // Let the app keep running by returning an empty result.
       return of(result as T);
+
     };
+
   }
+
 }

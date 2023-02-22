@@ -12,4 +12,10 @@ export class ConfigService {
       Authorization: `Bearer ${localStorage.getItem("token")}`
   })};
   constructor() { }
+
+  logout(){
+
+    localStorage.removeItem("token");
+
+  }
 }

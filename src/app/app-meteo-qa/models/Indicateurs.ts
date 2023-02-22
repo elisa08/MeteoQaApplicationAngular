@@ -1,5 +1,5 @@
 export class Indicateur{
-
+    nom!:string;
     date!: string;
     sulphur_dioxide!: number;
     uv_index!: number;

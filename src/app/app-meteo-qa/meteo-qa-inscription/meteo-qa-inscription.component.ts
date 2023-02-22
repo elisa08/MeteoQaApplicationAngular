@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MeteoQaAuthService } from '../services/meteo-qa-auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from '../models/users';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-meteo-qa-inscription',
@@ -12,18 +13,15 @@ export class MeteoQaInscriptionComponent implements OnInit {
 
   formRegister!:FormGroup;
 
-  userInfo={
-    email:"",
-    nom:"",
-    prenom:"",
-    motDePasse:""
-  }
-  constructor(private serviceAuth:MeteoQaAuthService, private builder:FormBuilder) {
+  constructor(private serviceAuth:MeteoQaAuthService, private builder:FormBuilder, private router : Router) {
     this.formRegister = this.builder.group({
-      email: ['', [Validators.required, Validators.email]],
+
       nom: ['', [Validators.required]],
       prenom: ['', [Validators.required]],
-      motDePasse: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      username: ['', [Validators.required]],
+      password: ['', [Validators.required]],
+
 
     });
   }
@@ -39,11 +37,35 @@ export class MeteoQaInscriptionComponent implements OnInit {
 
     this.serviceAuth.addUser(dataUser).subscribe(
       (callback) => {
-        console.log(callback)
-        this.formRegister.reset();
+        console.log(callback);
+
+        const dataToConnect= {
+          login: dataUser.username,
+          password: dataUser.password
+        }
+
+        this.serviceAuth.loginUser(dataToConnect).subscribe(
+          (callback) => {
+            console.log(callback.access_token);
+
+            localStorage.setItem("token",callback.access_token);
+            localStorage.setItem("login",dataToConnect.login);
+
+            this.router.navigate(["meteo-qa-compte"]);
+            this.formRegister.reset();
+
+          },
+          (error) => {
+            console.log(error)
+          }
+        );
       },
-      (error) => {}
+      (error) => {
+        console.log(error);
+      }
     );
+
+
   }
 
 
