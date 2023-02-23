@@ -2,18 +2,19 @@
   <form [formGroup]="formLogin">
      <h1 class="h3 mb-3 fw-normal">Se connecter</h1>
 
-     <div class="form-floating">
+     <div class="form-group">
+       <label
+         for="floatingInput" >Identifiant</label>
         <input type="text"
-           class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="login"><label
-           for="floatingInput" >Login</label>
+           class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="login">
 
      </div>
-     <div class="form-floating">
+     <div class="form-group">
+       <label for="floatingPassword">Mot de passe </label>
         <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
-        formControlName="password"><label for="floatingPassword">Password</label>
+        formControlName="password">
       </div>
 
-     <div class="checkbox mb-3"><a href="/meteo-qa-inscription">s'incrire</a></div>
-     <button class="w-100 btn btn-lg btn-light" type="submit" (click)="loginUser()" [disabled]="!formLogin.valid">connexion</button>
+     <button class="btn btn-light" type="submit" (click)="loginUser()" [disabled]="!formLogin.valid">connexion</button>
   </form>
 </main>

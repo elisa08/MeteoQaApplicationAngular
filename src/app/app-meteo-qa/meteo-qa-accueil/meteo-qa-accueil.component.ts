@@ -12,7 +12,8 @@ import { MeteoQaCommuneService } from '../services/meteo-qa-commune.service';
   styleUrls: ['./meteo-qa-accueil.component.css']
 })
 export class MeteoQaAccueilComponent implements OnInit {
-
+    displayConnexionForm = false;
+    displayRegisterForm = false;
   // indicateur:Indicateur={
   //   date:"",
   //   sulphur_dioxide:0,
@@ -91,4 +92,13 @@ export class MeteoQaAccueilComponent implements OnInit {
 
   // }
 
+  displayConnexion() {
+    this.displayConnexionForm = true;
+    this.displayRegisterForm = false;
+  }
+
+  displayRegister() {
+    this.displayConnexionForm = false;
+    this.displayRegisterForm = true;
+  }
 }

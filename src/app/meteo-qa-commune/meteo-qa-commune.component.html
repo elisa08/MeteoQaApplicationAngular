@@ -1,38 +1,99 @@
 <app-meteo-qa-nav></app-meteo-qa-nav>
 <div class="container mt-5">
-
-    <div class="row">
-      <div class="col-lg-6">
-        <div class="align-rigth">
-          <select name="" id="" (change)="getCommuneById($event)">
-            <option value="">nom commune</option>
-            <option *ngFor="let commune of communeListe" [value]="commune.idCommune">{{commune.nom}}</option>
-          </select>
+  <div class="row" style="margin-top: 50px">
+    <h5>Information Montpellier</h5>
+    <div class="col-lg-4">
+      <div class="card" style="background-color: black; border: 1px solid #333333">
+        <div class="card-header" style="background-color: #333333">
+          <div class="row">
+            <div class="col-lg-6"></div>
+            <div class="row" style="margin-top: 20px">
+              <div class="col-lg-4">
+                <i class="fa-solid fa-cloud-moon-rain" style="font-size: 30px;padding: 5px"></i> 13.2°C
+              </div>
+              <div class="col-lg-4">
+                <i class="fa-solid fa-earth-oceania" style="font-size: 30px;padding: 5px"></i> Good
+              </div>
+              <div class="col-lg-4">
+                <i class="fa-solid fa-user" style="font-size: 30px;padding: 5px"></i> 124K
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="row">
+              <div class="col-lg-6">
+                <i class="fa-solid fa-wind" style="font-size: 30px;padding: 5px"></i>
+                <p>Vent et direction</p>
+                <small style="color: #333333">5Km/h</small>
+              </div>
+              <div class="col-lg-6">
+                <i class="fa-solid fa-temperature-quarter" style="font-size: 30px;padding: 5px"></i>
+                <p>Température minimale</p>
+                <small style="color: #333333">13.2° C</small>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <i class="fa-solid fa-rainbow" style="font-size: 30px;padding: 5px"></i>
+                <p>Pression atmosphérique</p>
+                <small style="color: #333333">101 326 Pa</small>
+              </div>
+              <div class="col-lg-6">
+                <i class="fa-solid fa-temperature-full" style="font-size: 30px;padding: 5px"></i>
+                <p>Température maximale</p>
+                <small style="color: #333333">21° C</small>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-  <div *ngIf="meteos">
-    <app-meteo-qa-widget [listMeteos]="meteos"></app-meteo-qa-widget>
+    <div class="col-lg-4">
+      <h5>Qualité de l'air</h5>
+
+    </div>
+    <div class="col-lg-4">
+      <form [formGroup]="formFavorite">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" formControlName="meteo">
+          <label class="form-check-label" for="defaultCheck1">
+            Météo
+          </label>
+        </div>
+        <label for="indicateur">Indicateurs</label>
+        <select class="form-control" formControlName="polluant">
+          <option value="choix indicateur" ></option>
+          <option *ngFor="let indicateur of indic | slice:1" [value]="indicateur">{{indicateur}}</option>
+        </select>
+        <button type="submit" class="btn btn-light" (click)="addFavorite()" style="border:1px solid white;background-color: black;color: white;margin: 10px">créer un favori <i class="fa-regular fa-star" style="color:yellow;float: right; padding: 5px"></i></button>
+      </form>
+
+    </div>
   </div>
 
-  <div class="col-lg-6">
-    <form [formGroup]="formFavorite">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" formControlName="meteo">
-        <label class="form-check-label" for="defaultCheck1">
-          Default checkbox
-        </label>
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="align-rigth">
+          <div class="form-group">
+            <label for="commune">Sélectionnez la commune</label>
+          <select class="form-control" name="" id="" (change)="getCommuneById($event)">
+            <option value="">nom commune</option>
+            <option *ngFor="let commune of communeListe" [value]="commune.idCommune">{{commune.nom}}</option>
+          </select>
+          </div>
+        </div>
       </div>
-      <label for="exampleInputEmail1">indicateurs</label>
-      <select formControlName="polluant">
-        <option value="choix indicateur" ></option>
-        <option *ngFor="let indicateur of indic | slice:1" [value]="indicateur">{{indicateur}}</option>
-      </select>
-      <button type="submit" class="btn btn-primary" (click)="addFavorite()">créer un favori</button>
-    </form>
+    </div>
+  <div class="row">
+    <div class="col-lg-12">
+        <div *ngIf="meteos">
+          <app-meteo-qa-widget [listMeteos]="meteos"></app-meteo-qa-widget>
+        </div>
+    </div>
   </div>
-
 </div>
 
 

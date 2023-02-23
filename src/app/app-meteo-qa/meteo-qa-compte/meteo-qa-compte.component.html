@@ -1,17 +1,115 @@
 <app-meteo-qa-nav></app-meteo-qa-nav>
 <div class="container mt-5">
 
-    <div class="row">
-      <div class="col-lg-8">
-        Bonjour {{singleUser?.nom}} {{singleUser?.prenom}}
-      </div>
-      <div class="col-lg-4">
-        <ul class="list-group">
-          <li class="list-group-item" style="color:black"><i class="fa fa-trash" aria-hidden="true" style="color:red"></i>favori</li>
-        </ul>
-      </div>
-    </div>
+      <h1>Mon compte : {{singleUser?.nom}} {{singleUser?.prenom}}</h1>
+      <h5>Informations principales</h5>
+        <form style="">
+          <div class="row">
+          <div class="col-lg-3">
+            <div class="form-group">
+              <label for="nom">Nom</label>
+              <input type="text" class="form-control" id="floatingPassword" placeholder="nom" formControlName="nom" value="{{singleUser?.nom}} ">
+            </div>
+            <div class="form-group">
+              <label for="floatingPassword">Prénom</label>
+              <input type="text" class="form-control" id="floatingPassword" placeholder="prenom" formControlName="prenom" value="{{singleUser?.prenom}}">
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="form-group">
+              <label
+                for="floatingInput">Email </label>
+              <input type="email"
+                     class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="email">
+
+            </div>
+            <div class="form-group">
+              <label
+                for="floatingInput">Identifiant</label>
+              <input type="email"
+                     class="form-control" id="floatingInput" formControlName="username">
+
+            </div>
+          </div>
+          <div class="col-lg-3">
+          <div class="form-group">
+            <label for="floatingPassword">Mot de passe</label>
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="password">
+          </div>
+          </div>
+          </div>
+          <div class="row" style="margin-top: 20px">
+            <div class="col-lg-4">
+              <button class="btn btn-light" type="submit" style="margin-right: 10px">Enregistrer</button>
+              <button class="btn btn-danger" type="submit">Supprimer le compte</button>
+            </div>
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4"></div>
+          </div>
+        </form>
+        <div class="row" style="margin-top: 50px">
+          <div class="col-lg-4">
+            <h5>Communes favorites</h5>
+            <ul class="list-group">
+              <li class="list-group-item" style="background-color: black;color:white;border: 1px solid white; margin: 5px; border-radius: 10px;">Montpellier <i class="fa fa-trash" aria-hidden="true" style="color:red; float: right"></i> </li>
+              <li class="list-group-item" style="background-color: black;color:white;border: 1px solid white;margin: 5px;border-radius: 10px;">Paris <i class="fa fa-trash" aria-hidden="true" style="color:red; float: right"></i> </li>
+              <li class="list-group-item" style="background-color: black;color:white;border: 1px solid white;margin: 5px;border-radius: 10px;">Nantes <i class="fa fa-trash" aria-hidden="true" style="color:red; float: right"></i> </li>
+            </ul>
+          </div>
+          <div class="col-lg-4">
+            <h5>Information Monpellier</h5>
+
+          </div>
+          <div class="col-lg-4">
+            <div class="card" style="background-color: black; border: 1px solid #333333">
+              <div class="card-header" style="background-color: #333333">
+                <div class="row">
+                  <div class="col-lg-6"></div>
+                  <div class="row" style="margin-top: 20px">
+                    <div class="col-lg-4">
+                      <i class="fa-solid fa-cloud-moon-rain" style="font-size: 30px;padding: 5px"></i> 13.2°C
+                    </div>
+                    <div class="col-lg-4">
+                      <i class="fa-solid fa-earth-oceania" style="font-size: 30px;padding: 5px"></i> Good
+                    </div>
+                    <div class="col-lg-4">
+                      <i class="fa-solid fa-user" style="font-size: 30px;padding: 5px"></i> 124K
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <i class="fa-solid fa-wind" style="font-size: 30px;padding: 5px"></i>
+                        <p>Vent et direction</p>
+                      <small style="color: #333333">5Km/h</small>
+                    </div>
+                    <div class="col-lg-6">
+                      <i class="fa-solid fa-temperature-quarter" style="font-size: 30px;padding: 5px"></i>
+                      <p>Température minimale</p>
+                      <small style="color: #333333">13.2° C</small>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <i class="fa-solid fa-rainbow" style="font-size: 30px;padding: 5px"></i>
+                      <p>Pression atmosphérique</p>
+                      <small style="color: #333333">101 326 Pa</small>
+                    </div>
+                    <div class="col-lg-6">
+                      <i class="fa-solid fa-temperature-full" style="font-size: 30px;padding: 5px"></i>
+                      <p>Température maximale</p>
+                      <small style="color: #333333">21° C</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+ </div>
 
 
-  </div>
 

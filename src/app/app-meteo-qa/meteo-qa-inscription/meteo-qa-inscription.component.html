@@ -2,31 +2,35 @@
 <main class="form-signin w-100 m-auto">
   <h1 class="h3 mb-3 fw-normal">S'inscire</h1>
   <form [formGroup]="formRegister">
-     <div class="form-floating">
-      <input type="text" class="form-control" id="floatingPassword" placeholder="nom" formControlName="nom">
-      <label for="nom">nom</label>
+     <div class="form-group">
+       <label for="nom">Nom</label>
+       <input type="text" class="form-control" id="floatingPassword" placeholder="nom" formControlName="nom">
     </div>
-    <div class="form-floating">
+    <div class="form-group">
+      <label for="floatingPassword">Prénom</label>
       <input type="text" class="form-control" id="floatingPassword" placeholder="prenom" formControlName="prenom">
-      <label for="floatingPassword">prénom</label>
+
     </div>
-     <div class="form-floating">
+     <div class="form-group">
+       <label
+         for="floatingInput">Email </label>
         <input type="email"
-           class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="email"><label
-           for="floatingInput">Email address</label>
+           class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="email">
 
      </div>
-     <div class="form-floating">
+     <div class="form-group">
+       <label
+         for="floatingInput">Identifiant</label>
       <input type="email"
-         class="form-control" id="floatingInput" formControlName="username"><label
-         for="floatingInput">username</label>
+         class="form-control" id="floatingInput" formControlName="username">
 
    </div>
-     <div class="form-floating">
+     <div class="form-group">
+       <label for="floatingPassword">Mot de passe</label>
         <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="password">
-        <label for="floatingPassword">Password</label>
+
       </div>
-     <button class="w-100 btn btn-lg btn-light" type="button" (click)="registerUser()" [disabled]="!formRegister.valid">s'inscrire</button>
+     <button class="btn btn-light" type="button" (click)="registerUser()" [disabled]="!formRegister.valid">s'inscrire</button>
 
 
   </form>

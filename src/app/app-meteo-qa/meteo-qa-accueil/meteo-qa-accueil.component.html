@@ -98,11 +98,61 @@
 
       </div>
     </div>
-    <div class="col-lg-4">
+    <div class="col-lg-4" style="margin-top: 80px">
+      <div class="card" style="background-color: black; border: 1px solid white">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-6">
+             <h3>Paris <i class="fa-regular fa-star" style="color:yellow"></i></h3>
+              <small>Ma commune - ma region</small>
+            </div>
+            <div class="col-lg-6"></div>
+            <div class="row" style="margin-top: 20px">
+              <div class="col-lg-4">
+                <i class="fa-solid fa-cloud-moon-rain" style="font-size: 30px;padding: 5px"></i> 13.2°C<br><small style="font-size: 10px">Nuageux et ventueux</small>
+              </div>
+              <div class="col-lg-4">
+                <i class="fa-solid fa-earth-oceania" style="font-size: 30px;padding: 5px"></i> Good
+              </div>
+              <div class="col-lg-4">
+                <i class="fa-solid fa-user" style="font-size: 30px;padding: 5px"></i> 124K
+              </div>
+            </div>
+            </div>
+        </div>
+      </div>
+      <div class="fav mt-10" style="margin-top: 20px">
+        <div class="row">
+          <div class="col-lg-4">
+            <h3>Favoris</h3>
+          </div>
+          <div class="col-lg-8">
+            <p>Lorem ipsum dolor sit  ligula gravida.
+              Nunc in dictum ex. <a href="#"> adipiscing</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="fav mt-10" style="margin-top: 20px">
+        <div class="row">
+          <div class="col-lg-4">
+          </div>
+          <div class="col-lg-4">
+            <button class="w-100 btn btn-light" type="button" (click)="displayConnexion()">Connexion</button>
+          </div>
+          <div class="col-lg-4">
+            <button class="w-100 btn btn-light" type="button" (click)="displayRegister()">Inscription</button>
+          </div>
+        </div>
+      </div>
       <div class="form-panel  mt-10">
-        <app-meteo-qa-login></app-meteo-qa-login>
+        <ng-container *ngIf="displayConnexionForm">
+          <hr class="my-4">
+          <app-meteo-qa-login></app-meteo-qa-login>
+        </ng-container>
+        <ng-container *ngIf="displayRegisterForm">
         <hr class="my-4">
         <app-meteo-qa-inscription></app-meteo-qa-inscription>
+        </ng-container>
       </div>
 
     </div>
